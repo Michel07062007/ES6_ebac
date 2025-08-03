@@ -1,30 +1,32 @@
 "use strict";
 
-var alunos = ['Marcos', 'Lara', 'João', 'Maria'];
-var alunosENotas = alunos.map(function (itemAtual) {
-  itemAtual = {
-    nome: itemAtual,
-    nota1: '6',
-    nota2: '7',
-    nota3: '8',
-    nota4: '1'
-  };
-  return itemAtual;
-});
-console.log(alunosENotas);
+// Array de objetos contendo os alunos e suas notas
+var alunos = [{
+  nome: 'João',
+  nota: 7.5
+}, {
+  nome: 'Maria',
+  nota: 4.8
+}, {
+  nome: 'Pedro',
+  nota: 9.2
+}, {
+  nome: 'Ana',
+  nota: 5.9
+}, {
+  nome: 'Carlos',
+  nota: 6.3
+}];
 
-// const  = ['6', '8', '10', '2']
+// Função para filtrar alunos com nota maior ou igual a 6
+function filtrarAlunosAprovados(alunos) {
+  return alunos.filter(function (aluno) {
+    return aluno.nota >= 6;
+  });
+}
 
-// if (notasEAlunos > 6) {
-//     console.log(`Os alunos que estão á cima da média é:${notaEAluno}`)
-// }
-//     else {
-//         console.log(`Nenhum dos alunos estão á cima da média`)
-//     }
+// Chamada da função
+var alunosAprovados = filtrarAlunosAprovados(alunos);
 
-// • Cria um array de objetos, onde teremos como atributos do objeto: o nome e a nota de alunos;
-
-// • Criar uma função que irá retornar apenas os alunos que tiveram a nota maior ou igual à 6;
-
-// • Crie uma branch exercicio_es6 no repositório do curso, armazene o código nesta branch e nos envie o 
-// link através da plataforma.
+// Exibindo os alunos aprovados
+console.log(alunosAprovados);
